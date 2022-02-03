@@ -5,23 +5,31 @@
 /* Mettre à jours les données (avec l'option mutations) dans plusieurs pages en même temps */
 
 import { createStore } from 'vuex';
+import axios, { AxiosResponse } from 'axios';
 
+let a: AxiosResponse<any, any>;
 export default createStore({
   state: { /* Mettre les données */
     totalFromVueX: 30,
+    statistics: a,
   },
   getters: { /* Accéder aux données */
     doubleDuTotal(state) {
       return state.totalFromVueX * 2;
     },
   },
-  mutations: { /* Mettre à jours nos données du state */
+  mutations: { /* Mettre à jours nos données du state dans une nouvelle valeur */
     setTotalFromVueX(state, nouvelleValeur) {
       state.totalFromVueX = nouvelleValeur;
     },
   },
   actions: {
-  },
-  modules: {
-  },
+    getProducts({commit}) {
+      axios
+      .get('https://coronavirusapifr.herokuapp.com/data/live/france')
+      .then((response) => {commit(state.statistics, response.data)})
+
+    }
+    },
+},
 });

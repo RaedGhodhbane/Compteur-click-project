@@ -2999,6 +2999,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "axios@npm:0.25.0"
+  dependencies:
+    follow-redirects: ^1.14.7
+  checksum: 2a8a3787c05f2a0c9c3878f49782357e2a9f38945b93018fb0c4fd788171c43dceefbb577988628e09fea53952744d1ecebde234b561f1e703aa43e0a598a3ad
+  languageName: node
+  linkType: hard
+
 "babel-code-frame@npm:^6.22.0":
   version: 6.26.0
   resolution: "babel-code-frame@npm:6.26.0"
@@ -4041,6 +4050,7 @@ __metadata:
     "@vue/compiler-sfc": ^3.0.0
     "@vue/eslint-config-airbnb": ^5.0.2
     "@vue/eslint-config-typescript": ^7.0.0
+    axios: ^0.25.0
     core-js: ^3.6.5
     eslint: ^6.7.2
     eslint-plugin-import: ^2.20.2
@@ -5977,7 +5987,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.7":
   version: 1.14.7
   resolution: "follow-redirects@npm:1.14.7"
   peerDependenciesMeta:
