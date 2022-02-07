@@ -25,7 +25,10 @@ export default createStore({
     getProducts(state) {
       axios
         .get('https://coronavirusapifr.herokuapp.com/data/live/france')
-        .then((response) => { state.statistics = response.data; });
+        .then((response) => {
+          // eslint-disable-next-line prefer-destructuring
+          state.statistics = response.data[0];
+        });
     },
   },
 });

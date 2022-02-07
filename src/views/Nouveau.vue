@@ -1,80 +1,78 @@
 <template>
 <p> Coucou, je suis la nouvelle page ! </p>
-  <div v-for="(statistic, index) in data" :key="index">
     <h1>Statistiques sur le COVID-19 en France</h1>
     <br />
-    <p>Date : {{ statistic.date }}</p>
+    <p>Date : {{ data.date }}</p>
     <p>
-      Taux de positivité : {{ statistic.tx_pos ? statistic.tx_pos : "null" }}
+      Taux de positivité : {{ data.tx_pos ? data.tx_pos : "null" }}
     </p>
     <p>
-      Taux d'incidence : {{ statistic.tx_incid ? statistic.tx_incid : "null" }}
+      Taux d'incidence : {{ data.tx_incid ? data.tx_incid : "null" }}
     </p>
-    <p>Taux d'occupation : {{ statistic.TO ? statistic.TO : "null" }}</p>
+    <p>Taux d'occupation : {{ data.TO ? data.TO : "null" }}</p>
     <p>
       Facteur de reproduction du virus :
-      {{ statistic.R ? statistic.R : "null" }}
+      {{ data.R ? data.R : "null" }}
     </p>
     <p>
       Nombre de patients actuellement en réanimation ou en soins intensifs :
-      {{ statistic.rea ? statistic.rea : "null" }}
+      {{ data.rea ? data.rea : "null" }}
     </p>
     <p>
       Nombre de patients actuellement hospitalisés pour COVID-19 :
-      {{ statistic.hosp ? statistic.hosp : "null" }}
+      {{ data.hosp ? data.hosp : "null" }}
     </p>
     <p>
       Nombre cumulé de patients ayant été hospitalisés pour COVID-19 et de
       retour à domicile en raison de l'amélioration de leur état de santé :
-      {{ statistic.rad ? statistic.rad : "null" }}
+      {{ data.rad ? data.rad : "null" }}
     </p>
     <p>
-      Décès à l’hôpital : {{ statistic.dchosp ? statistic.dchosp : "null" }}
+      Décès à l’hôpital : {{ data.dchosp ? data.dchosp : "null" }}
     </p>
     <p>
       Nombre de nouveaux patients admis en réanimation au cours des dernières
-      24h : {{ statistic.incid_rea ? statistic.incid_rea : "null" }}
+      24h : {{ data.incid_rea ? data.incid_rea : "null" }}
     </p>
     <p>
       Nombre de nouveaux patients hospitalisés au cours des dernières 24h :
-      {{ statistic.incid_hosp ? statistic.incid_hosp : "null" }}
+      {{ data.incid_hosp ? data.incid_hosp : "null" }}
     </p>
     <p>
       Nouveaux retours à domicile au cours des dernières 24h :
-      {{ statistic.incid_rad ? statistic.incid_rad : "null" }}
+      {{ data.incid_rad ? data.incid_rad : "null" }}
     </p>
     <p>
       Nouveaux patients décédés à l’hôpital au cours des dernières 24h :
-      {{ statistic.incid_dchosp ? statistic.incid_dchosp : "null" }}
+      {{ data.incid_dchosp ? data.incid_dchosp : "null" }}
     </p>
     <p>
-      Nombre de cas confirmés : {{ statistic.conf ? statistic.conf : "null" }}
+      Nombre de cas confirmés : {{ data.conf ? data.conf : "null" }}
     </p>
     <p>
       Nombre de nouveaux cas confirmés (J-1 date de résultats) :
-      {{ statistic.conf_j1 ? statistic.conf_j1 : "null" }}
+      {{ data.conf_j1 ? data.conf_j1 : "null" }}
     </p>
     <p>
       Nombre de personnes déclarées positives (J-3 date de prélèvement) :
-      {{ statistic.pos ? statistic.pos : "null" }}
+      {{ data.pos ? data.pos : "null" }}
     </p>
-    <p>Décès en ESMS : {{ statistic.esms_dc ? statistic.esms_dc : "null" }}</p>
+    <p>Décès en ESMS : {{ data.esms_dc ? data.esms_dc : "null" }}</p>
     <p>
       Cumul des décès (cumul des décès constatés à l'hôpital et en EMS) :
-      {{ statistic.dc_tot ? statistic.dc_tot : "null" }}
+      {{ data.dc_tot ? data.dc_tot : "null" }}
     </p>
     <p>
       Nombre de personnes déclarées positives sur une semaine (J-3 date de
-      prélèvement) : {{ statistic.pos_7j ? statistic.pos_7j : "null" }}
+      prélèvement) : {{ data.pos_7j ? data.pos_7j : "null" }}
     </p>
     <p>
-      Nombre de doses : {{ statistic.cv_dose1 ? statistic.cv_dose1 : "null" }}
+      Nombre de doses : {{ data.cv_dose1 ? data.cv_dose1 : "null" }}
     </p>
     <p>
       Cas confirmés en ESMS :
-      {{ statistic.esms_cas ? statistic.esms_cas : "null" }}
+      {{ data.esms_cas}}
     </p>
-  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
