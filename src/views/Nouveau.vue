@@ -1,6 +1,6 @@
 <template>
 <p> Coucou, je suis la nouvelle page ! </p>
-  <div v-for="(statistic, index) in statistics" :key="index">
+  <div v-for="(statistic, index) in data" :key="index">
     <h1>Statistiques sur le COVID-19 en France</h1>
     <br />
     <p>Date : {{ statistic.date }}</p>
@@ -81,13 +81,12 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   computed: {
-      statistic() {
-          return this.$store.state.statistics;
-      }
+    data() {
+      return this.$store.state.statistics;
+    },
   },
   mounted() {
-    this.$store.dispatch('getProducts');
-    },
+    this.$store.commit('getProducts');
   },
 });
 </script>
