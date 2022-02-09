@@ -4,31 +4,31 @@
 /* Accéder aux données (avec l'option getters) dans plusieurs pages en même temps */
 /* Mettre à jours les données (avec l'option mutations) dans plusieurs pages en même temps */
 
-import { createStore } from 'vuex';
-import axios from 'axios';
-import { CovidData } from './data-type';
+import { createStore } from "vuex";
+import axios from "axios";
+import { CovidData } from "./data-type";
 
 export default createStore({
-  state: { /* Mettre les données */
-    totalFromVueX: 30,
+  state: {
+    /* Mettre les données */ totalFromVueX: 30,
     statistics: {} as CovidData,
   },
-  getters: { /* Accéder aux données */
+  getters: {
+    /* Accéder aux données */
     doubleDuTotal(state) {
       return state.totalFromVueX * 2;
     },
   },
-  mutations: { /* Mettre à jours nos données du state dans une nouvelle valeur */
+  mutations: {
+    /* Mettre à jours nos données du state dans une nouvelle valeur */
     setTotalFromVueX(state, nouvelleValeur) {
       state.totalFromVueX = nouvelleValeur;
     },
     getProducts(state) {
-      axios
-        .get('https://coronavirusapifr.herokuapp.com/data/live/france')
-        .then((response) => {
-          // eslint-disable-next-line prefer-destructuring
-          state.statistics = response.data[0];
-        });
+      axios.get("https://coronavirusapifr.herokuapp.com/data/live/france").then((response) => {
+        // eslint-disable-next-line prefer-destructuring
+        state.statistics = response.data[0];
+      });
     },
   },
 });

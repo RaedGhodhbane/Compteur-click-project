@@ -1,15 +1,15 @@
 <template>
   <div class="about">
-    <Compteur/>
+    <Compteur />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Compteur from '@/components/Compteur.vue';
+import { defineComponent } from "vue";
+import Compteur from "@/components/Compteur.vue";
 
 export default defineComponent({
-  name: 'About',
+  name: "About",
   components: {
     Compteur,
   },

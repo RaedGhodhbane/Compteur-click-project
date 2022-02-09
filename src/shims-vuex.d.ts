@@ -1,13 +1,13 @@
-import { Store } from 'vuex';
+import { Store } from "vuex";
 
-declare module '@vue/runtime-core' {
+declare module "@vue/runtime-core" {
   // Declare your own store states.
   interface State {
     statistics: any;
-    totalFromVueX: number
+    totalFromVueX: number;
   }
 
   interface ComponentCustomProperties {
-    $store: Store<State>
+    $store: Store<State>;
   }
 }

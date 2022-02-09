@@ -1,15 +1,11 @@
 <template>
-<p> Coucou, je suis la nouvelle page ! </p>
-    <h1 class="classname">Statistiques sur le COVID-19 en France</h1>
-    <br/>
-    <div class="box">
+  <p>Coucou, je suis la nouvelle page !</p>
+  <h1 class="classname">Statistiques sur le COVID-19 en France</h1>
+  <br />
+  <div class="box">
     <p>Date : {{ data.date }}</p>
-    <p>
-      Taux de positivité : {{ data.tx_pos ? data.tx_pos : "null" }}
-    </p>
-    <p>
-      Taux d'incidence : {{ data.tx_incid ? data.tx_incid : "null" }}
-    </p>
+    <p>Taux de positivité : {{ data.tx_pos ? data.tx_pos : "null" }}</p>
+    <p>Taux d'incidence : {{ data.tx_incid ? data.tx_incid : "null" }}</p>
     <p>Taux d'occupation : {{ data.TO ? data.TO : "null" }}</p>
     <p>
       Facteur de reproduction du virus :
@@ -24,16 +20,14 @@
       {{ data.hosp ? data.hosp : "null" }}
     </p>
     <p>
-      Nombre cumulé de patients ayant été hospitalisés pour COVID-19 et de
-      retour à domicile en raison de l'amélioration de leur état de santé :
+      Nombre cumulé de patients ayant été hospitalisés pour COVID-19 et de retour à domicile en
+      raison de l'amélioration de leur état de santé :
       {{ data.rad ? data.rad : "null" }}
     </p>
+    <p>Décès à l’hôpital : {{ data.dchosp ? data.dchosp : "null" }}</p>
     <p>
-      Décès à l’hôpital : {{ data.dchosp ? data.dchosp : "null" }}
-    </p>
-    <p>
-      Nombre de nouveaux patients admis en réanimation au cours des dernières
-      24h : {{ data.incid_rea ? data.incid_rea : "null" }}
+      Nombre de nouveaux patients admis en réanimation au cours des dernières 24h :
+      {{ data.incid_rea ? data.incid_rea : "null" }}
     </p>
     <p>
       Nombre de nouveaux patients hospitalisés au cours des dernières 24h :
@@ -47,9 +41,7 @@
       Nouveaux patients décédés à l’hôpital au cours des dernières 24h :
       {{ data.incid_dchosp ? data.incid_dchosp : "null" }}
     </p>
-    <p>
-      Nombre de cas confirmés : {{ data.conf ? data.conf : "null" }}
-    </p>
+    <p>Nombre de cas confirmés : {{ data.conf ? data.conf : "null" }}</p>
     <p>
       Nombre de nouveaux cas confirmés (J-1 date de résultats) :
       {{ data.conf_j1 ? data.conf_j1 : "null" }}
@@ -64,20 +56,18 @@
       {{ data.dc_tot ? data.dc_tot : "null" }}
     </p>
     <p>
-      Nombre de personnes déclarées positives sur une semaine (J-3 date de
-      prélèvement) : {{ data.pos_7j ? data.pos_7j : "null" }}
+      Nombre de personnes déclarées positives sur une semaine (J-3 date de prélèvement) :
+      {{ data.pos_7j ? data.pos_7j : "null" }}
     </p>
-    <p>
-      Nombre de doses : {{ data.cv_dose1 ? data.cv_dose1 : "null" }}
-    </p>
+    <p>Nombre de doses : {{ data.cv_dose1 ? data.cv_dose1 : "null" }}</p>
     <p>
       Cas confirmés en ESMS :
-      {{ data.esms_cas}}
+      {{ data.esms_cas }}
     </p>
-    </div>
+  </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
   computed: {
@@ -86,15 +76,15 @@ export default defineComponent({
     },
   },
   mounted() {
-    this.$store.commit('getProducts');
+    this.$store.commit("getProducts");
   },
 });
 </script>
 <style scoped>
 .classname {
-  @apply mt-10 mb-10 text-2xl text-fuchsia-500
+  @apply mt-10 mb-10 text-2xl text-fuchsia-500;
 }
 .box {
-  @apply border-8 border-black pb-2 mx-4
+  @apply border-8 border-black pb-2 mx-4;
 }
 </style>

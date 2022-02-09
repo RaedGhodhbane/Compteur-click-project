@@ -1,18 +1,18 @@
 <template>
   <div>
-      <h1> Mon super compteur </h1>
-      <p @click="increment"> Vous avez cliqué {{ total }} fois.</p>
-      <hr>
-      <p> Le total général depuis VueX est de {{ totalGeneral }} </p>
-      <p> Le double du total est de {{ doubleDuTotal }} </p>
+    <h1>Mon super compteur</h1>
+    <p @click="increment">Vous avez cliqué {{ total }} fois.</p>
+    <hr />
+    <p>Le total général depuis VueX est de {{ totalGeneral }}</p>
+    <p>Le double du total est de {{ doubleDuTotal }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'Compteur',
+  name: "Compteur",
   data() {
     return {
       total: 0,
@@ -29,12 +29,10 @@ export default defineComponent({
   methods: {
     increment() {
       this.total += 1;
-      this.$store.commit('setTotalFromVueX', this.totalGeneral += 1);
+      this.$store.commit("setTotalFromVueX", (this.totalGeneral += 1));
     },
   },
 });
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
