@@ -1,7 +1,8 @@
 <template>
 <p> Coucou, je suis la nouvelle page ! </p>
-    <h1>Statistiques sur le COVID-19 en France</h1>
-    <br />
+    <h1 class="classname">Statistiques sur le COVID-19 en France</h1>
+    <br/>
+    <div class="box">
     <p>Date : {{ data.date }}</p>
     <p>
       Taux de positivité : {{ data.tx_pos ? data.tx_pos : "null" }}
@@ -73,6 +74,7 @@
       Cas confirmés en ESMS :
       {{ data.esms_cas}}
     </p>
+    </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -88,3 +90,11 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.classname {
+  @apply mt-10 mb-10 text-2xl text-fuchsia-500
+}
+.box {
+  @apply border-8 border-black pb-2 mx-4
+}
+</style>
